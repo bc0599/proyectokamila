@@ -27,8 +27,17 @@ export class LoginPage implements OnInit {
     this.authService.authState.subscribe((user) => {
       this.user = user;
       this.loggedIn = (user != null);
+      console.log(this.user.email)
+      console.log(this.user.id)
 
       if(this.loggedIn==true){
+        console.log('esta logeado')
+
+        this.loginForm.setValue({
+          email:this.user.email,
+          password:this.user.id
+        })
+
         this.routeService.login(JSON.stringify(this.loginForm.value)).subscribe(
           data=>{ console.log(data);
             this.router.navigate(['/home'])
@@ -39,9 +48,7 @@ export class LoginPage implements OnInit {
         )
       }
 
-      console.log(this.user)
-      console.log(this.loggedIn)
-    });
+    })
   }
 
   signInWithGoogle(): void {
