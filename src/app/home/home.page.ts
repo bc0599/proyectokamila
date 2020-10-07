@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RouteService } from '../../../shared/route.service';
 import {cloneDeep} from 'lodash';
+import _ from 'lodash';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +14,7 @@ export class HomePage implements OnInit {
   Routes: any = [];
   response: any = [];
   routesArray:any=[];
+  targetObject:any=[];
 
   constructor(
     private routeService: RouteService,
@@ -28,6 +30,7 @@ export class HomePage implements OnInit {
 
   }
   ngOnInit(){}
+
   
   ionViewDidEnter() {
     let item = JSON.parse(sessionStorage.getItem("loggedUserInfo"));
@@ -68,4 +71,19 @@ export class HomePage implements OnInit {
       )
       
   }
+
+  searchRoutes(event){
+
+     this.Routes=_.filter(this.Routes, { 'route_name': event });
+
+  }
+
+  onClear(event){
+    const val = event.target.value;
+    console.log(val)
+    console.log('hola mundo')
+    this.ionViewDidEnter();
+  }
+
+
 }

@@ -1,10 +1,7 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
     <ion-title align="center">
-      <h1>Ionic Route App</h1>
+      <ion-title class="ion-text-center">Route App</ion-title>
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,6 +11,7 @@
 
   <ion-row  class="ion-margin-top ion-justify-content-center">
     <ion-col size="10">
+      <ion-searchbar showCancelButton="never" (ionClear)="onClear($event)" (search)="searchRoutes($event.target.value)" placeholder="Search by route name" ></ion-searchbar>
 
   <ion-card>
     <ion-card-content>
