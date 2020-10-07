@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title align="center">
+      <h1>Ionic Route App</h1>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-row  class="ion-margin-top ion-justify-content-center">
+    <ion-col size="10">
+
+  <ion-card>
+    <ion-card-content>
+      
+  <ion-list class="ios list-ios hydrated" >
+    <ion-list-header class="ios hydrated header-color">
+      <ion-text color="light">
+      <h4>Route List</h4>
+      </ion-text>
+    </ion-list-header>
+
+    <ion-item *ngFor="let route of Routes" class="item-label item ios in-list ion-focusable hydrated">
+      <ion-label class="sc-ion-label-ios-h sc-ion-label-ios-s ios hydrated">
+        <h2>{{route.route_name}}</h2>
+        <h3>{{route.id}}</h3>
+      </ion-label>
+
+      <div class="item-note" item-end>
+        <button ion-button clear [routerLink]="['/modifyroutes/', route.id]">
+          <ion-icon name="create" style="zoom:2.0"></ion-icon>
+        </button>
+        <button ion-button clear (click)="deleteRoute(route, i)">
+          <ion-icon name="trash" style="zoom:2.0"></ion-icon>
+        </button>
+
+      </div>
+    </ion-item>
+  </ion-list>
+
+  </ion-card-content>
+</ion-card>
+
+</ion-col>
+</ion-row>
+
+  <!-- fab placed to the bottom start -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" routerLink="/addroutes">
+    <ion-fab-button (click)="addRoute();">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+
+  </ion-fab>
+
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed" routerLink="/login">
+   <ion-button  (click)= "logout()" shape="round" fill="outline">Log Out</ion-button>
+</ion-fab>

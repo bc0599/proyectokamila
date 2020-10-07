@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar class="ios hydrated">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ios title-ios hydrated">Add Route</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-row  class="ion-margin-top ion-justify-content-center">
+    <ion-col size="10">
+  <ion-card>
+    <ion-card-content>
+
+  <ion-list lines="full" class="ion-no-margin ion-no-padding ios list-ios list-lines-full list-ios-lines-full hydrated">
+    <form [formGroup]="routeForm" (ngSubmit)="onFormSubmit()">
+      <ion-item>
+        <ion-label position="floating">Name</ion-label>
+        <ion-input formControlName="route_name" type="text" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Id</ion-label>
+        <ion-input formControlName="id" type="text" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" color="primary" shape="full" expand="block">Add Route</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-list>
+
+  </ion-card-content>
+  </ion-card>
+  </ion-col>
+  </ion-row>
+</ion-content>

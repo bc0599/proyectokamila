@@ -1,0 +1,7 @@
+{
+  "name": "routesApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

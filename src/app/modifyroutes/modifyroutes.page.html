@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar class="ios hydrated">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ios title-ios hydrated">Edit Route</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-row  class="ion-margin-top ion-justify-content-center">
+    <ion-col size="10">
+  <ion-card>
+
+  <ion-list lines="full" class="ion-no-margin ion-no-padding ios list-ios list-lines-full list-ios-lines-full hydrated">
+    <form [formGroup]="updateRouteForm" (ngSubmit)="updateForm()">
+      <ion-item>
+        <ion-label position="floating">Route name</ion-label>
+        <ion-input [(ngModel)]="inputValue" formControlName="route_name" type="text" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Id</ion-label>
+        <ion-input disabled="true" [(ngModel)]="inputValueId" formControlName="id" type="text" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" color="primary" shape="full" expand="block">Update Route</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-list>
+  </ion-card>
+  </ion-col>
+  </ion-row>
+</ion-content>

@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title align="center">
+      <h1>Ionic Route App</h1>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="auth-form">
+  <ion-grid>
+    <ion-row class="ion-margin-top ion-justify-content-center">
+      <ion-col align-self-center size="8">
+        <ion-button [routerLink]="['/register']" expand="block" color="primary">Register</ion-button>
+
+        <span class="divider line one-line">or</span>
+
+        <span class="already">Already a user?</span>
+
+        <ion-button [routerLink]="['/login']" expand="block" color="secondary">Sign In</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
